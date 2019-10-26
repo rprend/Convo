@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.timigod:android-chat-ui:v0.1.4@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2f98ee66407540b4eaac7e4582456773/jetified-android-chat-ui-v0.1.4/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2f98ee66407540b4eaac7e4582456773/jetified-android-chat-ui-v0.1.4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2f98ee66407540b4eaac7e4582456773/jetified-android-chat-ui-v0.1.4/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.timigod/android-chat-ui/v0.1.4/d22aec0bfc2449db12afbcfd105d8458b8a19a5/android-chat-ui-v0.1.4-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.timigod/android-chat-ui/v0.1.4/671bacdca487d1e5a675ff09b7efcdb38b3af8a/android-chat-ui-v0.1.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

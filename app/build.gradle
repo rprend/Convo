@@ -20,6 +20,8 @@ android {
 }
 
 dependencies {
+    implementation 'com.github.timigod:android-chat-ui:v0.1.4'
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
