@@ -24,7 +24,12 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
         // specify an adapter (see also next example)
-        String[] test = {"test", "test2", "test3", "test4", "test5", "test6"};
+        Convo[] test = {new Convo("hi",
+                "asnothuesantohuesnaotehusanteouh asntoheusnateohu  asonehu santeohu sanehu saneothu aseontuh asnteohu saeothu ",
+                R.drawable.anonymous_elephant),
+        new Convo("there",
+                "saonteusa nsateohu saneou sanoue saneotu haoehu saonetuh sa",
+                R.drawable.anonymous_elephant)};
         mAdapter = new MainAdapter(test);
         recyclerView.setAdapter(mAdapter);
 

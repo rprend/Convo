@@ -1,7 +1,10 @@
 package com.example.convo;
 
+import android.media.Image;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -11,16 +14,23 @@ import com.google.android.material.card.MaterialCardView;
 
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder> {
 
-    String[] mDataset;
+    Convo[] mDataset;
 
     public static class MainViewHolder extends RecyclerView.ViewHolder {
-        public MainViewHolder(MaterialCardView v) {
+
+        private ImageView icon;
+        private TextView title;
+        private TextView description;
+        public MainViewHolder(View v) {
             super(v);
+            icon = v.findViewById(R.id.card_icon);
+            title = v.findViewById(R.id.card_title);
+            description = v.findViewById(R.id.card_description);
         }
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MainAdapter(String[] myDataset) {
+    public MainAdapter(Convo[] myDataset) {
         mDataset = myDataset;
     }
 
@@ -29,7 +39,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder
     public MainAdapter.MainViewHolder onCreateViewHolder(ViewGroup parent,
                                                      int viewType) {
         // create a new view
-        MaterialCardView v = (MaterialCardView) LayoutInflater.from(parent.getContext())
+        View v = (View) LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.main_card_view, parent, false);
 
         MainViewHolder vh = new MainViewHolder(v);
@@ -41,7 +51,9 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder
     public void onBindViewHolder(MainViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-//        holder.textView.setText(mDataset[position]);
+        holder.title.setText(mDataset[position].title);
+        holder.description.setText(mDataset[position].description);
+        holder.icon.setImageResource(mDataset[position].drawable);
 
     }
 
