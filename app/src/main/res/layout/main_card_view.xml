@@ -20,13 +20,14 @@
             android:adjustViewBounds="true"
             android:src="@drawable/anonymous_elephant"
             android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:paddingBottom="10dp"
             android:id="@+id/card_icon"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/card_icon"
-            android:text="Developer Standup w/ PM"
             android:textStyle="bold"
             android:textSize="20dp"
             android:id="@+id/card_title"/>
@@ -34,10 +35,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="lorem ipsum delocor whatever fuck shit bitch you're a rich girl and you won't go far because you know it don't matter anyway."
             android:layout_toRightOf="@+id/card_icon"
             android:layout_below="@+id/card_title"
-            android:id="@+id/card_description"/>
+            android:id="@+id/card_description"
+            android:paddingBottom="10dp"/>
 
     </RelativeLayout>
 </com.google.android.material.card.MaterialCardView>
