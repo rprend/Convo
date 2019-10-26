@@ -8,48 +8,13 @@
     tools:context=".MainActivity"
     android:layout_height="match_parent">
 
-    <com.google.android.material.card.MaterialCardView
-        style="@style/Widget.MaterialComponents.CardView"
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/mtrl_card_spacing"
-        android:layout_marginTop="@dimen/mtrl_card_spacing"
-        android:layout_marginRight="@dimen/mtrl_card_spacing"
-        android:minHeight="150dp">
+        android:id="@+id/main_activity_recyclerview">
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp">
+    </androidx.recyclerview.widget.RecyclerView>
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:gravity="center_vertical"
-                android:adjustViewBounds="true"
-                android:src="@drawable/anonymous_elephant"
-                android:paddingRight="10dp"
-                android:id="@+id/cardicon"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/cardicon"
-                android:text="Developer Standup w/ PM"
-                android:textStyle="bold"
-                android:textSize="20dp"
-                android:id="@+id/cardtext"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="lorem ipsum delocor whatever fuck shit bitch you're a rich girl and you won't go far because you know it don't matter anyway."
-                android:layout_toRightOf="@+id/cardicon"
-                android:layout_below="@+id/cardtext"/>
-
-        </RelativeLayout>
-    </com.google.android.material.card.MaterialCardView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
