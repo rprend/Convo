@@ -26,6 +26,8 @@ dependencies {
 //    implementation 'com.tyorikan:voice-recording-visualizer:1.0.3@aar'
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.github.Cutta:GifView:1.4'
+
 
     implementation 'com.android.support:design:25.0.0'
     implementation "com.android.support:support-compat:25.0.0"

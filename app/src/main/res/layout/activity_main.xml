@@ -6,7 +6,8 @@
     android:id="@+id/coordinator"
     android:layout_width="match_parent"
     tools:context=".MainActivity"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
@@ -15,24 +16,35 @@
 
     </android.support.v7.widget.RecyclerView>
 
-    <!-- TODO REPLACE FAB -->
-<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-<!--        style="@style/Widget.Design.FloatingActionButton"-->
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/circle"/>
+
+        <com.cunoraz.gifview.library.GifView
+            android:id="@+id/audio_input_gif"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_margin="16dp"
+            app:gif="@raw/audio_input" />
+
+    </RelativeLayout>
+
+<!--    <android.support.design.widget.FloatingActionButton-->
 <!--        android:id="@+id/fab"-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
 <!--        android:layout_gravity="bottom|center"-->
-<!--        android:layout_margin="16dp"-->
-<!--        app:srcCompat="@drawable/baseline_mic_black_18dp"/>-->
+<!--        app:gif="@raw/audio_input"-->
+<!--        android:src="@raw/audio_input"-->
+<!--        android:layout_margin="16dp">-->
 
-<!--    <Button-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:id="@+id/btn"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintLeft_toLeftOf="parent"-->
-<!--        app:layout_constraintRight_toRightOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        android:onClick="gotoActivity"-->
-<!--        />-->
+<!--    </android.support.design.widget.FloatingActionButton>-->
+
 </LinearLayout>

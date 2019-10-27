@@ -1,10 +1,16 @@
 package com.example.convo;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.Toast;
+
+import com.cunoraz.gifview.library.GifView;
 
 import java.util.ArrayList;
 
@@ -50,14 +56,31 @@ public class MainActivity extends AppCompatActivity {
 
         // TODO: reimplement
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-
+//
 //        fab.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
-//                Intent intent = new Intent(view.getContext(), ConvoActivity.class);
-//                startActivity(intent);
+//
+//
+//                //Intent intent = new Intent(view.getContext(), ConvoActivity.class);
+//                //startActivity(intent);
 //            }
 //        });
+
+        GifView gif = (GifView) findViewById(R.id.audio_input_gif);
+        gif.setVisibility(View.VISIBLE);
+        gif.setScaleX(2);
+        gif.setScaleY(2);
+
+        gif.play();
+        gif.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),"Hello World!",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
     }
 
 }

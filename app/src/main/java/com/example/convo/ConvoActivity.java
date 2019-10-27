@@ -38,18 +38,6 @@ public class ConvoActivity extends Activity {
 
         }
 
-//        @Override
-//        protected void onPause() {
-//            mRecordingSampler.stopRecording();
-//            super.onPause();
-//        }
-//
-//        @Override
-//        protected void onDestroy() {
-//            mRecordingSampler.release();
-//            super.onDestroy();
-//        }
-
     }
 
     private void displayUserBubble(int id, String text) {
