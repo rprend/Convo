@@ -22,8 +22,8 @@
 
             android:padding="8dp"
             app:bl_arrowDirection="right"
-            app:bl_arrowHeight="10dp"
-            app:bl_arrowPosition="50dp"
+            app:bl_arrowHeight="8dp"
+            app:bl_arrowPosition="15dp"
             app:bl_arrowWidth="15dp"
 
             app:bl_bubbleColor="@color/colorGreen"
@@ -41,6 +41,7 @@
         </com.daasuu.bl.BubbleLayout>
 
         <ImageView
+            android:id="@+id/pic"
             android:contentDescription="@null"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

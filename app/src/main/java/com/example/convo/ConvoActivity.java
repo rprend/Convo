@@ -1,17 +1,12 @@
 package com.example.convo;
 
 import androidx.appcompat.app.AppCompatActivity;
+import com.tyorikan.voicerecordingvisualizer.RecordingSampler;
+import com.tyorikan.voicerecordingvisualizer.VisualizerView;
 
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
-
 import java.util.ArrayList;
-import java.util.Random;
 
 public class ConvoActivity extends AppCompatActivity {
 
@@ -25,23 +20,38 @@ public class ConvoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_active_convo);
 
-        messages = new ArrayList<>();
-        ArrayList<String> convos = savedInstanceState.getStringArrayList("convos");
-        ArrayList<Integer> convoID = savedInstanceState.getIntegerArrayList("convoID");
-        isLive = (convos == null);
-
         //set ListView adapter first
         listView = findViewById(R.id.list_view);
+        messages = new ArrayList<>();
         adapter = new ChatListAdapter(this, R.layout.user_bubble, messages);
         listView.setAdapter(adapter);
 
-        if (!isLive) {
+        Bundle extras = getIntent().getExtras();
+        isLive = extras == null;
+        if (extras != null) {
+
+            ArrayList<String> convos = extras.getStringArrayList("convos");
+            ArrayList<Integer> convoID = extras.getIntegerArrayList("convoID");
+
             for (int i = 0; i < convos.size(); i++) {
                 displayUserBubble(convoID.get(i), convos.get(i));
             }
+
         } else {
 
         }
+
+//        @Override
+//        protected void onPause() {
+//            mRecordingSampler.stopRecording();
+//            super.onPause();
+//        }
+//
+//        @Override
+//        protected void onDestroy() {
+//            mRecordingSampler.release();
+//            super.onDestroy();
+//        }
 
     }
 

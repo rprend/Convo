@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.daasuu.bl.BubbleLayout;
@@ -20,6 +21,7 @@ public class ChatListAdapter extends ArrayAdapter<ChatMessage> {
     private Activity activity;
     private ArrayList<ChatMessage> chatMessages;
     private int[] colors = { R.color.colorGreen, R.color.colorBlue, R.color.colorOrange, R.color.colorPink };
+    private int[] pics = { R.drawable.koala_green, R.drawable.bird_blue, R.drawable.elephant_yellow, R.drawable.panda_pink };
 
     @NonNull
     @Override
@@ -45,11 +47,6 @@ public class ChatListAdapter extends ArrayAdapter<ChatMessage> {
 
         if (chatMessage.isUser()) {
             layoutResource = R.layout.user_bubble;
-
-
-            // TODO: set profile pic
-
-
         } else {
             layoutResource = R.layout.info_bubble;
         }
@@ -70,6 +67,8 @@ public class ChatListAdapter extends ArrayAdapter<ChatMessage> {
 
         BubbleLayout bubbleLayout = convertView.findViewById(R.id.bubble);
         bubbleLayout.setBubbleColor(ContextCompat.getColor(context, colors[ind]));
+        ImageView imageView = convertView.findViewById(R.id.pic);
+        imageView.setImageResource(pics[ind]);
 
         return convertView;
     }

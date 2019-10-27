@@ -19,12 +19,17 @@ android {
     }
 }
 
+repositories {
+    jcenter()
+}
+
 dependencies {
     implementation 'com.github.MasayukiSuda:BubbleLayout:v1.2.1'
+    implementation 'com.tyorikan:voice-recording-visualizer:1.0.3@aar'
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    compile 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     testImplementation 'junit:junit:4.12'
