@@ -26,7 +26,7 @@
                 android:layout_width="wrap_content"
                 android:contentDescription="@null"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher_foreground" />
+                android:src="@drawable/anonymous_elephant" />
 
             <TextView
                 android:id="@+id/text"

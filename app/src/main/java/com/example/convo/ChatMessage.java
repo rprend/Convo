@@ -2,28 +2,28 @@ package com.example.convo;
 
 public class ChatMessage {
 
-    private boolean isMine;
+    private boolean isUser;
     private String message;
+    private int id;
 
-    public ChatMessage(String message, boolean isMine) {
-        this.isMine = isMine;
+    public ChatMessage(String message, boolean isUser, int id) {
         this.message = message;
+        this.isUser = isUser;
+        this.id = id;
+
     }
 
-    public boolean isMine() {
-        return isMine;
+    public int getId() {
+        return this.id;
     }
 
-    public void setMine(boolean mine) {
-        isMine = mine;
+    public boolean isUser() {
+        return isUser;
     }
 
     public String getMessage() {
         return message;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
-    }
 }
 

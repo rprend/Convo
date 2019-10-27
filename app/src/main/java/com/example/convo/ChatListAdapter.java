@@ -1,18 +1,33 @@
 package com.example.convo;
 
 import android.app.Activity;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.daasuu.bl.BubbleLayout;
+
 import java.util.ArrayList;
 
-public class ChatListAdapter extends ArrayAdapter<ChatMessage>{
+import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
+
+public class ChatListAdapter extends ArrayAdapter<ChatMessage> {
 
     private Activity activity;
     private ArrayList<ChatMessage> chatMessages;
+    private int[] colors = { R.color.colorGreen, R.color.colorBlue, R.color.colorOrange, R.color.colorPink };
+
+    @NonNull
+    @Override
+    public Context getContext() {
+        return super.getContext();
+    }
+
+    Context context = getContext();
 
     public ChatListAdapter(Activity context, int resource, ArrayList<ChatMessage> objects) {
         super(context, resource, objects);
@@ -28,10 +43,15 @@ public class ChatListAdapter extends ArrayAdapter<ChatMessage>{
         int layoutResource; // determined by view type
         ChatMessage chatMessage = getItem(position);
 
-        if (chatMessage.isMine()) {
-            layoutResource = R.layout.item_out;
+        if (chatMessage.isUser()) {
+            layoutResource = R.layout.user_bubble;
+
+
+            // TODO: set profile pic
+
+
         } else {
-            layoutResource = R.layout.item_in;
+            layoutResource = R.layout.info_bubble;
         }
 
         if (convertView != null) {
@@ -44,6 +64,12 @@ public class ChatListAdapter extends ArrayAdapter<ChatMessage>{
 
         //set message content
         holder.message.setText(chatMessage.getMessage());
+
+        int usrId = chatMessage.getId();
+        int ind = usrId % colors.length;
+
+        BubbleLayout bubbleLayout = convertView.findViewById(R.id.bubble);
+        bubbleLayout.setBubbleColor(ContextCompat.getColor(context, colors[ind]));
 
         return convertView;
     }
