@@ -3,14 +3,11 @@ package com.example.convo;
 import android.app.Activity;
 import android.content.Context;
 import android.support.annotation.NonNull;
-import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 //import com.daasuu.bl.BubbleLayout;
@@ -21,7 +18,7 @@ public class ChatListAdapter extends ArrayAdapter<ChatMessage> {
 
     private Activity activity;
     private ArrayList<ChatMessage> chatMessages;
-    private int[] colors = { R.color.colorGreen, R.color.colorBlue, R.color.colorOrange, R.color.colorPink };
+    private int[] shapes = { R.drawable.rounded_green, R.drawable.rounded_blue, R.drawable.rounded_orange, R.drawable.rounded_pink};
     private int[] pics = { R.drawable.koala_green, R.drawable.bird_blue, R.drawable.elephant_yellow, R.drawable.panda_pink };
 
     @NonNull
@@ -64,11 +61,11 @@ public class ChatListAdapter extends ArrayAdapter<ChatMessage> {
         holder.message.setText(chatMessage.getMessage());
 
         int usrId = chatMessage.getId();
-        int ind = usrId % colors.length;
+        int ind = usrId % shapes.length;
 
         // TODO: implement again
         TextView bubbleLayout = (TextView) convertView.findViewById(R.id.bubble);
-        bubbleLayout.setBackgroundColor(ContextCompat.getColor(context, colors[ind]));
+        bubbleLayout.setBackground(convertView.getResources().getDrawable(shapes[ind], null));
 
 //        bubbleLayout.setBubbleColor(ContextCompat.getColor(context, colors[ind]));
         ImageView imageView = (ImageView) convertView.findViewById(R.id.pic);
