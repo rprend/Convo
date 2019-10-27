@@ -2,18 +2,12 @@ package com.example.convo;
 
 import android.content.Context;
 import android.content.Intent;
-import android.media.Image;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.google.android.material.card.MaterialCardView;
 
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder> {
 
@@ -27,9 +21,9 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder
         private TextView description;
         MainViewHolder(View v) {
             super(v);
-            icon = v.findViewById(R.id.card_icon);
-            title = v.findViewById(R.id.card_title);
-            description = v.findViewById(R.id.card_description);
+            icon = (ImageView) v.findViewById(R.id.card_icon);
+            title = (TextView) v.findViewById(R.id.card_title);
+            description = (TextView) v.findViewById(R.id.card_description);
         }
     }
 

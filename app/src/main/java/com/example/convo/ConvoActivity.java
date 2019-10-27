@@ -1,14 +1,11 @@
 package com.example.convo;
 
-import androidx.appcompat.app.AppCompatActivity;
-import com.tyorikan.voicerecordingvisualizer.RecordingSampler;
-import com.tyorikan.voicerecordingvisualizer.VisualizerView;
-
+import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ListView;
 import java.util.ArrayList;
 
-public class ConvoActivity extends AppCompatActivity {
+public class ConvoActivity extends Activity {
 
     private ListView listView;
     private ArrayList<ChatMessage> messages;
@@ -21,7 +18,7 @@ public class ConvoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_active_convo);
 
         //set ListView adapter first
-        listView = findViewById(R.id.list_view);
+        listView = (ListView) findViewById(R.id.list_view);
         messages = new ArrayList<>();
         adapter = new ChatListAdapter(this, R.layout.user_bubble, messages);
         listView.setAdapter(adapter);

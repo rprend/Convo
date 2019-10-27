@@ -1,13 +1,11 @@
 package com.example.convo;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,7 +13,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        try {
+            setContentView(R.layout.activity_main);
+        } catch (Exception e) {
+        Log.e("onCreateView", "onCreateView", e);
+        throw e;
+    }
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.main_activity_recyclerview);
         recyclerView.setHasFixedSize(true);
@@ -45,15 +48,16 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView.Adapter mAdapter = new MainAdapter(test, recyclerView);
         recyclerView.setAdapter(mAdapter);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        // TODO: reimplement
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), ConvoActivity.class);
-                startActivity(intent);
-            }
-        });
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(view.getContext(), ConvoActivity.class);
+//                startActivity(intent);
+//            }
+//        });
     }
 
 }

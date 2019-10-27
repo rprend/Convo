@@ -2,6 +2,8 @@ package com.example.convo;
 
 import android.app.Activity;
 import android.content.Context;
+import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,12 +11,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.daasuu.bl.BubbleLayout;
+//import com.daasuu.bl.BubbleLayout;
 
 import java.util.ArrayList;
-
-import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
 
 public class ChatListAdapter extends ArrayAdapter<ChatMessage> {
 
@@ -65,10 +64,11 @@ public class ChatListAdapter extends ArrayAdapter<ChatMessage> {
         int usrId = chatMessage.getId();
         int ind = usrId % colors.length;
 
-        BubbleLayout bubbleLayout = convertView.findViewById(R.id.bubble);
-        bubbleLayout.setBubbleColor(ContextCompat.getColor(context, colors[ind]));
-        ImageView imageView = convertView.findViewById(R.id.pic);
-        imageView.setImageResource(pics[ind]);
+        // TODO: implement again
+//        BubbleLayout bubbleLayout = (BubbleLayout) convertView.findViewById(R.id.bubble);
+//        bubbleLayout.setBubbleColor(ContextCompat.getColor(context, colors[ind]));
+//        ImageView imageView = (ImageView) convertView.findViewById(R.id.pic);
+//        imageView.setImageResource(pics[ind]);
 
         return convertView;
     }
