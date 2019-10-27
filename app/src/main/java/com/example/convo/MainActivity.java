@@ -35,48 +35,56 @@ public class MainActivity extends AppCompatActivity {
         // specify an adapter (see also next example)
 
         ArrayList<String> toPassConvos = new ArrayList<>();
-        toPassConvos.add("I am a bird. Chirp.");
-        toPassConvos.add("I'm an elephant. Honetly not sure what sound I make.");
-        toPassConvos.add("I'm a panda. I don't make sound either lmao.");
-        toPassConvos.add("I'm a koala. I just eat leaves that literally poison me and sleep all day because I'm too fucking dumb to do anything else");
+        toPassConvos.add("Hello, welcome");
+        toPassConvos.add("let's get started");
+        toPassConvos.add("What, accomplish, last sprint");
+        toPassConvos.add("implement several features, in planning doc, fixed, issues");
+        toPassConvos.add("Very good work, we'll see you next time");
 
         ArrayList<Integer> convosID = new ArrayList<>();
         convosID.add(1);
         convosID.add(2);
-        convosID.add(3);
-        convosID.add(4);
+        convosID.add(1);
+        convosID.add(2);
+        convosID.add(1);
 
-        Convo[] test = {new Convo("Developer Standup with PM",
-                "print description",
-                R.drawable.anonymous_elephant,
-                toPassConvos,
-                convosID)};
-        RecyclerView.Adapter mAdapter = new MainAdapter(test, recyclerView);
+        ArrayList<String> toPassConvos2 = new ArrayList<>();
+        toPassConvos2.add("Thanks for coming, glad many attended");
+        toPassConvos2.add("concerned, current state of town too many disposable plastics, no viable recycling program");
+        toPassConvos2.add("I agree");
+        toPassConvos2.add("create, community-wide, recycle initiative");
+        toPassConvos2.add("great idea, talk, next meeting");
+
+        ArrayList<Integer> convosID2 = new ArrayList<>();
+        convosID2.add(1);
+        convosID2.add(2);
+        convosID2.add(3);
+        convosID2.add(4);
+        convosID2.add(2);
+
+        Convo c1 = new Convo("Developer Standup with PM", "Time: 1:00pm - 1:30pm\nLocation: Conference Room A", R.drawable.code_orange, toPassConvos, convosID);
+        Convo c2 = new Convo("Eco Friendly Commitee Meeting", "Topics: Carbon Emissions, Single Use Plastics, etc.", R.drawable.leaf, toPassConvos2, convosID2);
+        Convo[] convos = {c1, c2};
+        RecyclerView.Adapter mAdapter = new MainAdapter(convos, recyclerView);
         recyclerView.setAdapter(mAdapter);
-
-        // TODO: reimplement
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//
-//                //Intent intent = new Intent(view.getContext(), ConvoActivity.class);
-//                //startActivity(intent);
-//            }
-//        });
 
         GifView gif = (GifView) findViewById(R.id.audio_input_gif);
         gif.setVisibility(View.VISIBLE);
-        gif.setScaleX(2);
-        gif.setScaleY(2);
+        gif.pause();
+        gif.setScaleX((float) 1.50);
+        gif.setScaleY((float) 1.50);
 
-        gif.play();
         gif.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"Hello World!",Toast.LENGTH_SHORT).show();
+
+                GifView gif = (GifView) findViewById(R.id.audio_input_gif);
+                if (gif.isPlaying()) {
+                    gif.pause();
+                } else {
+                    gif.play();
+                }
+
             }
         });
 

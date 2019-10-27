@@ -1,11 +1,11 @@
 package com.example.convo;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 import java.util.ArrayList;
 
-public class ConvoActivity extends Activity {
+public class ConvoActivity extends AppCompatActivity {
 
     private ListView listView;
     private ArrayList<ChatMessage> messages;
