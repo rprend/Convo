@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 //import com.daasuu.bl.BubbleLayout;
@@ -65,10 +67,12 @@ public class ChatListAdapter extends ArrayAdapter<ChatMessage> {
         int ind = usrId % colors.length;
 
         // TODO: implement again
-//        BubbleLayout bubbleLayout = (BubbleLayout) convertView.findViewById(R.id.bubble);
+        TextView bubbleLayout = (TextView) convertView.findViewById(R.id.bubble);
+        bubbleLayout.setBackgroundColor(ContextCompat.getColor(context, colors[ind]));
+
 //        bubbleLayout.setBubbleColor(ContextCompat.getColor(context, colors[ind]));
-//        ImageView imageView = (ImageView) convertView.findViewById(R.id.pic);
-//        imageView.setImageResource(pics[ind]);
+        ImageView imageView = (ImageView) convertView.findViewById(R.id.pic);
+        imageView.setImageResource(pics[ind]);
 
         return convertView;
     }
@@ -90,7 +94,7 @@ public class ChatListAdapter extends ArrayAdapter<ChatMessage> {
         private TextView message;
 
         public ViewHolder(View v) {
-            message = (TextView)v.findViewById(R.id.text);
+            message = (TextView) v.findViewById(R.id.bubble);
         }
     }
 }
