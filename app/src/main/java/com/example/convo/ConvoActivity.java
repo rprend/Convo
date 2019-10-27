@@ -22,23 +22,24 @@ public class ConvoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_active_convo);
 
+        messages = new ArrayList<>();
         ArrayList<String> convos = savedInstanceState.getStringArrayList("convos");
+        ArrayList<Integer> convoID = savedInstanceState.getIntegerArrayList("convoID");
         isLive = (convos == null);
 
-        messages = new ArrayList<>();
-
-        listView = (ListView) findViewById(R.id.list_view);
-
         //set ListView adapter first
+        listView = findViewById(R.id.list_view);
         adapter = new ChatListAdapter(this, R.layout.user_bubble, messages);
         listView.setAdapter(adapter);
 
-
         if (!isLive) {
+            for (int i = 0; i < convos.size(); i++) {
+                displayUserBubble(convoID.get(i), convos.get(i));
+            }
+        } else {
 
         }
 
@@ -49,6 +50,6 @@ public class ConvoActivity extends AppCompatActivity {
 
         messages.add(chatMessage);
         adapter.notifyDataSetChanged();
-        listView.setSelection(adapter.getCount() - 1); //always scroll to bottom of list view
+        listView.setSelection(adapter.getCount() - 1); // always scroll to bottom of list view
     }
 }
