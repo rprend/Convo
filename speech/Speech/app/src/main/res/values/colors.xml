@@ -21,4 +21,16 @@
 
     <color name="status_hearing">#7B1FA2</color>
     <color name="status_not_hearing">#757575</color>
+    <color name="colorGreen">#3eb991</color>
+    <color name="colorBlue">#6ecadc</color>
+    <color name="colorOrange">#e9a820</color>
+    <color name="colorPink">#e01563</color>
+
+    <array name="colors">
+        <item>@color/colorGreen</item>
+        <item>@color/colorBlue</item>
+        <item>@color/colorOrange</item>
+        <item>@color/colorPink</item>
+    </array>
+
 </resources>
