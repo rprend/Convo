@@ -40,15 +40,5 @@
 
     </RelativeLayout>
 
-<!--    <android.support.design.widget.FloatingActionButton-->
-<!--        android:id="@+id/fab"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="bottom|center"-->
-<!--        app:gif="@raw/audio_input"-->
-<!--        android:src="@raw/audio_input"-->
-<!--        android:layout_margin="16dp">-->
-
-<!--    </android.support.design.widget.FloatingActionButton>-->
 
 </LinearLayout>
