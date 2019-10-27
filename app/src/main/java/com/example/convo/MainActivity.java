@@ -78,8 +78,8 @@ public class MainActivity extends AppCompatActivity {
         convosID3.add(1);
         convosID3.add(2);
 
-        Convo c1 = new Convo("Developer Standup with PM", "Time: 1:00pm - 1:30pm\nLocation: Conference Room A", R.drawable.code_orange, toPassConvos1, convosID1);
-        Convo c2 = new Convo("Eco Friendly Commitee Meeting", "Topics: Carbon Emissions, Single Use Plastics, etc.", R.drawable.leaf, toPassConvos2, convosID2);
+        Convo c1 = new Convo("Developer Standup w/ Product Manager", "Time: 1:00pm - 1:30pm\nLocation: Conference Room A", R.drawable.code_orange, toPassConvos1, convosID1);
+        Convo c2 = new Convo("Eco-Friendly Committee Meeting", "Topics: Carbon Emissions, Single Use Plastics, etc.", R.drawable.leaf, toPassConvos2, convosID2);
         Convo c3 = new Convo("Office Social", "Date: 12/20/18", R.drawable.cake_blue, toPassConvos3, convosID3);
 
         Convo[] convos = {c1, c2, c3};
