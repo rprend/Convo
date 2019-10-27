@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.anonymous_elephant),
         new Convo("there",
                 "saonteusa nsateohu saneou sanoue saneotu haoehu saonetuh sa",
-                R.drawable.anonymous_elephant)};
+                R.drawable.elephant_pink)};
         mAdapter = new MainAdapter(test);
         recyclerView.setAdapter(mAdapter);
 
