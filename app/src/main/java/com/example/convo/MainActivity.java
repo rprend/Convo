@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,6 +18,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        System.out.println("made it main");
+
         setContentView(R.layout.activity_main);
 
         recyclerView = (RecyclerView) findViewById(R.id.main_activity_recyclerview);
@@ -33,5 +39,12 @@ public class MainActivity extends AppCompatActivity {
         mAdapter = new MainAdapter(test);
         recyclerView.setAdapter(mAdapter);
 
+        Button btn = (Button) findViewById(R.id.btn);
+    }
+
+
+    public void gotoActivity(android.view.View v) {
+        Intent intent = new Intent(this, ActiveConvo.class);
+        startActivity(intent);
     }
 }
