@@ -34,22 +34,22 @@ public class MainActivity extends AppCompatActivity {
 
         // specify an adapter (see also next example)
 
-        ArrayList<String> toPassConvos = new ArrayList<>();
-        toPassConvos.add("Hello, welcome");
-        toPassConvos.add("let's get started");
-        toPassConvos.add("What, accomplish, last sprint");
-        toPassConvos.add("implement several features, in planning doc, fixed, issues");
-        toPassConvos.add("Very good work, we'll see you next time");
+        ArrayList<String> toPassConvos1 = new ArrayList<>();
+        toPassConvos1.add("Hello");
+        toPassConvos1.add("let's get started");
+        toPassConvos1.add("accomplish, last sprint");
+        toPassConvos1.add("implement several features, planning doc, fixes");
+        toPassConvos1.add("Very good work");
 
-        ArrayList<Integer> convosID = new ArrayList<>();
-        convosID.add(1);
-        convosID.add(2);
-        convosID.add(1);
-        convosID.add(2);
-        convosID.add(1);
+        ArrayList<Integer> convosID1 = new ArrayList<>();
+        convosID1.add(1);
+        convosID1.add(2);
+        convosID1.add(1);
+        convosID1.add(2);
+        convosID1.add(1);
 
         ArrayList<String> toPassConvos2 = new ArrayList<>();
-        toPassConvos2.add("Thanks for coming, glad many attended");
+        toPassConvos2.add("Thanks");
         toPassConvos2.add("concerned, current state of town too many disposable plastics, no viable recycling program");
         toPassConvos2.add("I agree");
         toPassConvos2.add("create, community-wide, recycle initiative");
@@ -62,9 +62,27 @@ public class MainActivity extends AppCompatActivity {
         convosID2.add(4);
         convosID2.add(2);
 
-        Convo c1 = new Convo("Developer Standup with PM", "Time: 1:00pm - 1:30pm\nLocation: Conference Room A", R.drawable.code_orange, toPassConvos, convosID);
+        ArrayList<String> toPassConvos3 = new ArrayList<>();
+        toPassConvos3.add("How was weekend");
+        toPassConvos3.add("good, thanks");
+        toPassConvos3.add("looked, documents, sent you");
+        toPassConvos3.add("not yet, this weekend, will");
+        toPassConvos3.add("let me know, thinking");
+        toPassConvos3.add("will do");
+
+        ArrayList<Integer> convosID3 = new ArrayList<>();
+        convosID3.add(1);
+        convosID3.add(2);
+        convosID3.add(1);
+        convosID3.add(2);
+        convosID3.add(1);
+        convosID3.add(2);
+
+        Convo c1 = new Convo("Developer Standup with PM", "Time: 1:00pm - 1:30pm\nLocation: Conference Room A", R.drawable.code_orange, toPassConvos1, convosID1);
         Convo c2 = new Convo("Eco Friendly Commitee Meeting", "Topics: Carbon Emissions, Single Use Plastics, etc.", R.drawable.leaf, toPassConvos2, convosID2);
-        Convo[] convos = {c1, c2};
+        Convo c3 = new Convo("Office Social", "Date: 12/20/18", R.drawable.cake_blue, toPassConvos3, convosID3);
+
+        Convo[] convos = {c1, c2, c3};
         RecyclerView.Adapter mAdapter = new MainAdapter(convos, recyclerView);
         recyclerView.setAdapter(mAdapter);
 
