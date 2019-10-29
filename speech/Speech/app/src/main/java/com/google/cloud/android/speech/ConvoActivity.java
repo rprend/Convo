@@ -5,7 +5,10 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 import android.widget.ListView;
+
+import com.cunoraz.gifview.library.GifView;
 
 import java.util.ArrayList;
 
@@ -44,6 +47,13 @@ public class ConvoActivity extends Activity {
         } else {
 
         }
+
+
+        GifView gif = (GifView) findViewById(R.id.audio_input_gif);
+        gif.setVisibility(View.VISIBLE);
+        gif.play();
+        gif.setScaleX((float) 1.50);
+        gif.setScaleY((float) 1.50);
 
 //        @Override
 //        protected void onPause() {

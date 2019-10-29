@@ -8,17 +8,40 @@
     tools:context=".MainActivity"
     android:layout_height="match_parent">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn"
-        />
+<!--    <Button-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/btn"-->
+<!--        />-->
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/main_activity_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     </android.support.v7.widget.RecyclerView>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="6dp"
+            android:src="@drawable/circle"/>
+
+        <com.cunoraz.gifview.library.GifView
+            android:id="@+id/audio_input_gif"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="42dp"
+            app:gif="@raw/audio_input" />
+
+    </RelativeLayout>
 
     <!-- TODO REPLACE FAB -->
 <!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->

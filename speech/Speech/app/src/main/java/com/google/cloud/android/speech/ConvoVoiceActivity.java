@@ -38,6 +38,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -260,6 +271,31 @@ public class ConvoVoiceActivity extends AppCompatActivity implements MessageDial
                                     mText.setText(null);
                                     mAdapter.addMessage(new ChatMessage(text, true, id++));
                                     mRecyclerView.smoothScrollToPosition(0);
+
+                                    // Instantiate the RequestQueue.
+                                    RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
+                                    final String url = "http://localhost:3333/convo?text=" + text;
+
+//                                    String url = "http://www.google.com"trim;
+
+                                    StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                                            new Response.Listener<String>() {
+                                                @Override
+                                                public void onResponse(String response) {
+                                                    if (response.substring(13, response.length() - 2).length() > 1) {
+                                                        mAdapter.addMessage(
+                                                                new ChatMessage("Convo says: " + response.toString().substring(13, response.length() - 2),
+                                                                        true, 0));
+                                                    }
+                                                }
+                                            }, new Response.ErrorListener() {
+                                        @Override
+                                        public void onErrorResponse(VolleyError error) {
+                                        }
+                                    });
+
+                                    queue.add(stringRequest);
+
                                 } else {
                                     mText.setText(text);
                                 }

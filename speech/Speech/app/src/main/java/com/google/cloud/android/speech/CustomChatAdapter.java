@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.type.Color;
+
 import java.util.ArrayList;
 
 
@@ -53,8 +55,15 @@ public class CustomChatAdapter extends RecyclerView.Adapter<CustomChatAdapter.Ch
     @Override
     public void onBindViewHolder(ChatViewHolder holder, int position) {
         int i = chatMessages.get(position).getId() % shapes.length;
-        holder.icon.setImageResource(pics[i]);
-        holder.text.setBackground(holder.itemView.getResources().getDrawable(shapes[i], null));
+
+        if (chatMessages.get(position).isUser()) {
+            holder.text.setBackground(holder.itemView.getResources().getDrawable(shapes[i], null));
+            holder.icon.setImageResource(pics[i]);
+        } else {
+//            holder.text.setBackground(holder.itemView.getResources().getDrawable(R.drawable.rounded_white, null));
+//            holder.text.setTextColor(0xffffff);
+//            holder.icon.setImageResource(R.drawable.icon);
+        }
 
         holder.text.setText(chatMessages.get(position).getMessage());
 
